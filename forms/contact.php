@@ -3,9 +3,6 @@ require_once(__DIR__.'/assets/vendor/autoload.php');
 use \Mailjet\Client;
 use \Mailjet\Resources;
 
-define('MJ_APIKEY_PUBLIC', 'c8425f309f97151e6c330d169d14c594');
-define('MJ_APIKEY_PUBLIC', '6bd0b6489d9e1a49dfc576e3b5d5f449');
-
 $mj = new Client('MJ_APIKEY_PUBLIC', 'MJ_APIKEY_PRIVATE',true,['version' => 'v3.1']);
 
 if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['message'])) {
