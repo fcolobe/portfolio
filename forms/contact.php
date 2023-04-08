@@ -1,51 +1,24 @@
 <?php
-require_once(__DIR__.'/assets/vendor/autoload.php');
-use \Mailjet\Client;
-use \Mailjet\Resources;
-
-$mj = new Client('MJ_APIKEY_PUBLIC', 'MJ_APIKEY_PRIVATE',true,['version' => 'v3.1']);
-
-if(!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['message'])) {
-    // récupérer les valeurs des champs du formulaire
-    $name = htmlspecialchars($_POST['name']);
-    $email = htmlspecialchars($_POST['email']);
-    $subject = htmlspecialchars($_POST['subject']);
-    $message = htmlspecialchars($_POST['message']);
-
-    if(filter_var($email, FILTER_VALIDATE_EMAIL)){
-
-      $body = [
-        'Messages' => [
-            [
-                'From' => [
-                    'Email' => "$email",
-                    'Name' => "$name"
-                ],
-                'To' => [
-                    [
-                        'Email' => "fontycolobe@icloud.com",
-                        'Name' => "passenger 1"
-                    ]
-                ],
-                'Subject' => $subject,
-                'TextPart' => "$name <$email> a envoyé un message : $message",
-            ]
-        ]
-      ];
-      
-      $response = $mj->post(Resources::$Email, ['body' => $body]);
-      if ($response->success()) {
-        echo "Email envoyé avec succès";
-      } else {
-        echo "Erreur lors de l'envoi de l'email : ".$response->getReasonPhrase();
-      }
-
-    } else {
-      echo "Email non valide";
-    }
-
-  } else {
-    header('Location:index.html');
-    die();
+require_once(__DIR__.'vendor/autoload.php');
+ 
+use Symfony\Component\Mailer\Transport;
+use Symfony\Component\Mailer\Mailer;
+use Symfony\Component\Mime\Email;
+ 
+try {
+    $transport = Transport::fromDsn('mailjet+smtp://'.urlencode('c8425f309f97151e6c330d169d14c594').':'.urlencode('6bd0b6489d9e1a49dfc576e3b5d5f449').'@default');
+    $mailer = new Mailer($transport);
+ 
+    $email = (new Email())
+        ->from('SENDER_NAME <fontycolobe@icloud.com>')
+        ->to('fontycolobe@icloud.com')
+        ->subject('Email Subject')
+        ->html('<b>Email Body</b>');
+ 
+    $mailer->send($email);
+ 
+    echo "Email sent successfully.";
+} catch(Exception $e) {
+    echo $e->getMessage();
   }
 ?>
