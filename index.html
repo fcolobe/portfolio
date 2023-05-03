@@ -29,9 +29,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <script src="https://www.google.com/recaptcha/api.js?render=6Lc-FsclAAAAAKrJDeaDeykrZhdJkfZBHSoVdCon"></script>
-
+  
 </head>
 
 <body>
@@ -671,17 +669,6 @@
     integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
     crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
-
-  <script>
-    function onClick(e) {
-      e.preventDefault();
-      grecaptcha.ready(function() {
-        grecaptcha.execute('6Lc-FsclAAAAAKrJDeaDeykrZhdJkfZBHSoVdCon', {action: 'submit'}).then(function(token) {
-            // Add your logic to submit to your backend server here.
-        });
-      });
-    }
-</script>
 
 </body>
 
