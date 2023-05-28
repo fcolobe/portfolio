@@ -71,6 +71,7 @@
       </div>
     </div>
   </div><!-- End Hero Section -->
+  
 
   <main id="main">
     <!-- ======= About Section ======= -->
@@ -403,6 +404,31 @@
         <div class="row">
           <div class="col-md-4">
             <div class="work-box">
+              <a href="assets/img/work/work-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
+                <div class="work-img">
+                  <img src="assets/img/work/work-7.jpg" alt="" class="img-fluid">
+                </div>
+              </a>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title">MRI Tumeur Cérébrale</h2>
+                    <div class="w-more">
+                      <span class="w-ctegory">Deep Learning</span> / <span class="w-date">29 mai 2023</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="w-like">
+                      <a href="https://github.com/1017SQD/brain-tumor-detection"> <span
+                          class="bi bi-plus-circle"></span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="work-box">
               <a href="assets/img/work/work-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
                 <div class="work-img">
                   <img src="assets/img/work/work-6.jpg" alt="" class="img-fluid">
@@ -524,32 +550,10 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work/work-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work/work-3.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Web Scraping</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Programmation Python</span> / <span class="w-date">09 févr. 2023</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="https://github.com/1017SQD/Web-Scraping-with-Python"> <span
-                          class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
+      </div>
+      <div class="text-center">
+        <a href="portfolio-liste.html" class="btn btn-primary btn-lg">Voir plus de projets</a>
       </div>
     </section><!-- End Portfolio Section -->
 
@@ -647,6 +651,19 @@
 
   </main><!-- End #main -->
 
+  <!-- ======= Footer ======= -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="copyright-box">
+            <p class="copyright">&copy; Copyright <strong>DevFolio</strong>. All Rights Reserved</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
   <div id="preloader"></div>
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
@@ -669,19 +686,6 @@
     integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
     crossorigin="anonymous"></script>
   <script src="assets/js/main.js"></script>
-
-  <script src="https://www.google.com/recaptcha/api.js?render=6LdFh8olAAAAAGLNVByJj356lMI0S2co6HgGavWi"></script>
-
-  <script>
-    function onClick(e) {
-      e.preventDefault();
-      grecaptcha.ready(function() {
-        grecaptcha.execute('6LdFh8olAAAAAGLNVByJj356lMI0S2co6HgGavWi', {action: 'submit'}).then(function(token) {
-            // Add your logic to submit to your backend server here.
-        });
-      });
-    }
-</script>
 
 </body>
 
