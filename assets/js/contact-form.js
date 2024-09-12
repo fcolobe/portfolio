@@ -38,6 +38,8 @@ document.getElementById('contactForm').addEventListener('submit', function(event
                         title: 'Envoyé',
                         text: 'Votre message a bien été envoyé.',
                     });
+                    document.getElementById('contactForm').reset();
+                    grecaptcha.reset();
                 }, function(error) {
                     console.log('FAILED...', error);
                     Swal.fire({
