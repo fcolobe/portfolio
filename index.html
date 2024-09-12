@@ -21,6 +21,20 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <!-- reCAPTCHA v2 -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <!-- EmailJS -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "1HOjSvztnWSi0zST3",
+      });
+    })();
+  </script>
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-GHWPBDHHWM"></script>
   <script>
@@ -569,7 +583,7 @@
                       </h5>
                     </div>
                     <div>
-                      <form action="https://formspree.io/f/meqwlaly" method="post" class="php-email-form">
+                      <form id="contactForm" method="post" class="php-email-form">
                         <div class="row">
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
@@ -593,10 +607,12 @@
                               <textarea class="form-control" name="message" rows="5" placeholder="Message"
                                 required></textarea>
                             </div>
+                            <br>
+                            <div class="g-recaptcha" data-sitekey="6Lcr-D8qAAAAANzonSHqXGqWX8KNoLut4Vu-NwoU"></div>
                           </div>
                           <div class="col-md-12 text-center my-3">
                             <div class="loading">Chargement</div>
-                            <div class="error-message"></div>
+                            <div class="error-message">Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer.</div>
                             <div class="sent-message">Votre message a été envoyé. Merci !</div>
                           </div>
                           <div class="col-md-12 text-center">
@@ -673,6 +689,9 @@
   <!-- Particles JS Files -->
   <script src="assets/js/particles.min.js"></script>
   <script src="assets/js/custom.js"></script>
+
+  <!-- Script for the contact form -->
+  <script src="assets/js/contact-form.js"></script>
 
 </body>
 
