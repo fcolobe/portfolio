@@ -38,6 +38,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
                         icon: 'success',
                         title: 'Envoyé',
                         text: 'Votre message a bien été envoyé.',
+                        confirmButtonColor: '#3085d6',
                     });
                     document.getElementById('contactForm').reset();
                     grecaptcha.reset();
