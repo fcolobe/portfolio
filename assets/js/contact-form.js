@@ -48,6 +48,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
                         icon: 'error',
                         title: 'Erreur',
                         text: 'Une erreur est survenue lors de l\'envoi du message.',
+                        confirmButtonColor: '#3085d6',
                     });
                 });
         }
