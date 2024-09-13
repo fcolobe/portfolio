@@ -7,6 +7,7 @@ document.getElementById('contactForm').addEventListener('submit', function(event
             icon: 'error',
             title: 'Erreur',
             text: 'Veuillez cocher la case reCAPTCHA !',
+            confirmButtonColor: '#3085d6',
         });
         return;
     }
